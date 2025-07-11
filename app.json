@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/category/category",
+    "pages/stock/stock",
+    "pages/report/report",
+    "pages/mine/mine",
+    "pages/in-stock/in-stock"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "renderer": "skyline",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "defaultContentBox": true,
+      "tagNameStyleIsolation": "legacy",
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#E0E0E0",
+    "selectedColor": "#B39DDB",
+    "backgroundColor": "#212121",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tabbar/home_pray.png",
+        "selectedIconPath": "assets/tabbar/home_purple.png"
+      },
+      {
+        "pagePath": "pages/stock/stock",
+        "text": "库存",
+        "iconPath": "assets/tabbar/stock.png",
+        "selectedIconPath": "assets/tabbar/stock_selected.png"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "报表",
+        "iconPath": "assets/tabbar/report.png",
+        "selectedIconPath": "assets/tabbar/report_selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "assets/tabbar/mine_pray.png",
+        "selectedIconPath": "assets/tabbar/mine_purple.png"
+      }
+    ]
+  }
+}

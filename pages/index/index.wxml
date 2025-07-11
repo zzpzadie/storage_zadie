@@ -1,0 +1,93 @@
+<!--index.wxml-->
+<navigation-bar title="仓库管理" back="{{false}}" color="white" background="#212121"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <!-- 欢迎区域 -->
+    <view class="welcome-section">
+      <view class="welcome-text">
+        <text class="greeting">欢迎回来</text>
+        <text class="username">{{userName || '管理员'}}</text>
+      </view>
+      <view class="date-info">
+        <text class="date">{{currentDate}}</text>
+      </view>
+    </view>
+
+    <!-- 统计卡片区域 -->
+    <view class="stats-section">
+      <view class="stats-grid">
+        <view class="stat-card">
+          <view class="stat-icon">📊</view>
+          <view class="stat-content">
+            <text class="stat-number">{{monthInValue}}</text>
+            <text class="stat-label">本月入库商品金额</text>
+          </view>
+        </view>
+        <view class="stat-card warning">
+          <view class="stat-icon">⚠️</view>
+          <view class="stat-content">
+            <text class="stat-number">{{lowStockCount}}</text>
+            <text class="stat-label">库存预警</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 快捷操作区域 -->
+    <view class="quick-actions">
+      <text class="section-title">快捷操作</text>
+      <view class="actions-grid center-actions">
+        <view class="action-item" bindtap="inStock">
+          <view class="action-icon">📥</view>
+          <text class="action-text">入库</text>
+        </view>
+        <view class="action-item" bindtap="outStock">
+          <view class="action-icon">📤</view>
+          <text class="action-text">出库</text>
+        </view>
+        <view class="action-item" bindtap="searchProduct">
+          <view class="action-icon">🔍</view>
+          <text class="action-text">搜索商品</text>
+        </view>
+        <view class="action-item" bindtap="showCategory">
+          <view class="action-icon">📦</view>
+          <text class="action-text">商品分类</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 库存概览区域 -->
+    <view class="inventory-overview">
+      <view class="section-header">
+        <text class="section-title">库存概览</text>
+        <text class="view-all" bindtap="viewAllProducts">查看全部</text>
+      </view>
+      <view class="inventory-list">
+        <view class="inventory-item" wx:for="{{recentProducts}}" wx:key="id" bindtap="viewProduct" data-id="{{item.id}}">
+          <view class="product-info">
+            <text class="product-name">{{item.name}}</text>
+            <text class="product-category">{{item.category}}</text>
+          </view>
+          <view class="stock-info">
+            <text class="stock-count {{item.stock < item.minStock ? 'low-stock' : ''}}">{{item.stock}}</text>
+            <text class="stock-unit">{{item.unit}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 最近活动区域 -->
+    <view class="recent-activities">
+      <text class="section-title">最近活动</text>
+      <view class="activity-list">
+        <view class="activity-item" wx:for="{{recentActivities}}" wx:key="id">
+          <view class="activity-icon">{{item.icon}}</view>
+          <view class="activity-content">
+            <text class="activity-text">{{item.text}}</text>
+            <text class="activity-time">{{item.time}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

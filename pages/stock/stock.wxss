@@ -1,0 +1,72 @@
+.container {
+  padding: 32rpx;
+  display:flex;
+  flex-wrap:wrap;
+}
+/* 操作栏*/
+.stock-top-bar{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100rpx;
+  width:100%;
+  position: relative;
+  padding: 0 16rpx;
+  margin-top: 48rpx;
+}
+.icon-shezhi {
+  width: 56rpx;
+  height: 56rpx;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB0PSIxNzUyMjA1NTUzNDQwIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjExNjIiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZD0iTTM0MC43MTQ2NjcgMTkyLjIxMzMzM2EyMS4zMzMzMzMgMjEuMzMzMzMzIDAgMCAwLTE4LjQ1MzMzNCAxMC42NjY2NjdsLTE3MC42NjY2NjYgMjk4LjIxODY2N2EyMS42OTYgMjEuNjk2IDAgMCAwIDAgMjEuNDgyNjY2bDE3MC42NjY2NjYgMjk4LjIxODY2N2EyMS4zMzMzMzMgMjEuMzMzMzMzIDAgMCAwIDE4LjQ1MzMzNCAxMC42NjY2NjdoMzQxLjUwNGEyMS4zMzMzMzMgMjEuMzMzMzMzIDAgMCAwIDE4LjQ1MzMzMy0xMC42NjY2NjdsMTcwLjY2NjY2Ny0yOTguMjE4NjY3YTIxLjY5NiAyMS42OTYgMCAwIDAgMC0yMS40ODI2NjZsLTE3MC42NjY2NjctMjk4LjIxODY2N2EyMS4zMzMzMzMgMjEuMzMzMzMzIDAgMCAwLTE4LjQ1MzMzMy0xMC42NjY2NjdIMzQwLjcxNDY2N20wLTY0LjQ2OTMzM2gzNDEuNTA0QTg1LjE0MTMzMyA4NS4xNDEzMzMgMCAwIDEgNzU2LjA1MzMzMyAxNzAuNjY2NjY3bDE3MC42NjY2NjcgMjk4LjIxODY2NmE4Ni41OTIgODYuNTkyIDAgMCAxIDAgODUuOTczMzM0bC0xNzAuNjY2NjY3IDI5OC4xOTczMzNhODUuMTYyNjY3IDg1LjE2MjY2NyAwIDAgMS03My44MzQ2NjYgNDMuMDA4SDM0MC43MTQ2NjdhODUuMTYyNjY3IDg1LjE2MjY2NyAwIDAgMS03My44MzQ2NjctNDMuMDA4bC0xNzAuNjY2NjY3LTI5OC4xOTczMzNhODYuNTkyIDg2LjU5MiAwIDAgMSAwLTg1Ljk3MzMzNEwyNjYuODggMTcwLjY2NjY2N2E4NS4xNDEzMzMgODUuMTQxMzMzIDAgMCAxIDczLjgzNDY2Ny00Mi45ODY2Njd6IiBmaWxsPSIjMzMzMzMzIiBwLWlkPSIxMTYzIj48L3BhdGg+PHBhdGggZD0iTTUxMC45OTczMzMgNjYxLjMzMzMzM2ExNDkuMzMzMzMzIDE0OS4zMzMzMzMgMCAxIDEgMTQ5LjMzMzMzNC0xNDkuMzMzMzMzIDE0OS4zMzMzMzMgMTQ5LjMzMzMzMyAwIDAgMS0xNDkuMzMzMzM0IDE0OS4zMzMzMzN6IG0wLTIzNC42NjY2NjZhODUuMzMzMzMzIDg1LjMzMzMzMyAwIDEgMCA4NS4zMzMzMzQgODUuMzMzMzMzIDg1LjMzMzMzMyA4NS4zMzMzMzMgMCAwIDAtODUuMzMzMzM0LTg1LjMzMzMzM3oiIGZpbGw9IiNGRjlDMDAiIHAtaWQ9IjExNjQiPjwvcGF0aD48L3N2Zz4=");
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: var(--primary-text);
+  border: none;
+  border-radius: 32rpx;
+  font-size: 40rpx;
+  padding: 0 24rpx;
+  min-width: 56rpx;
+  line-height: 56rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.08);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-export {
+  width: 48rpx;
+  height: 48rpx;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB0PSIxNzUyMjE3NTA4MDE5IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjM0MDkiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZD0iTTMxOS45IDQ3Mi4ybC01MS4yLTYzaC02NGw4My4yIDEwMi40TDIwNC44IDYxNGg2NGw1MS4yLTYzIDUxLjIgNjNoNjRMMzUyIDUxMS42bDgzLjItMTAyLjRoLTY0bC01MS4zIDYzek0yMDQuOCA3MTYuNGgtNTEuMmMtMTQuMSAwLTI1LjYtMTEuNS0yNS42LTI1LjZWMzMyLjRjMC0xNC4xIDExLjUtMjUuNiAyNS42LTI1LjZoNTEuMlYxNTMuMmMwLTI4LjMgMjIuOS01MS4yIDUxLjItNTEuMmg1ODguOGMyOC4zIDAgNTEuMiAyMi45IDUxLjIgNTEuMlY4NzBjMCAyOC4zLTIyLjkgNTEuMi01MS4yIDUxLjJIMjU1LjljLTI4LjMgMC01MS4yLTIyLjktNTEuMi01MS4yVjcxNi40eiBtMjUuNSAwVjg3MGMwIDE0LjEgMTEuNSAyNS42IDI1LjYgMjUuNmg1ODguOGMxNC4xIDAgMjUuNi0xMS41IDI1LjYtMjUuNlYxNTMuMmMwLTE0LjEtMTEuNS0yNS42LTI1LjYtMjUuNkgyNTUuOWMtMTQuMSAwLTI1LjYgMTEuNS0yNS42IDI1LjZ2MTUzLjZoMjU2YzE0LjEgMCAyNS42IDExLjUgMjUuNiAyNS42djM1OC40YzAgMTQuMS0xMS41IDI1LjYtMjUuNiAyNS42aC0yNTZ6IG0zNTguNS0zMjBoMjA0LjhjNy4xIDAgMTIuOCA1LjcgMTIuOCAxMi44IDAgNy4xLTUuNyAxMi44LTEyLjggMTIuOEg1ODguOGMtNy4xIDAtMTIuOC01LjctMTIuOC0xMi44LTAuMS03LjEgNS43LTEyLjggMTIuOC0xMi44eiBtMCAxMDIuNGgyMDQuOGM3LjEgMCAxMi44IDUuNyAxMi44IDEyLjggMCA3LjEtNS43IDEyLjgtMTIuOCAxMi44SDU4OC44Yy03LjEgMC0xMi44LTUuNy0xMi44LTEyLjgtMC4xLTcuMSA1LjctMTIuOCAxMi44LTEyLjh6IG0wIDEwMi40aDIwNC44YzcuMSAwIDEyLjggNS43IDEyLjggMTIuOCAwIDcuMS01LjcgMTIuOC0xMi44IDEyLjhINTg4LjhjLTcuMSAwLTEyLjgtNS43LTEyLjgtMTIuOC0wLjEtNy4xIDUuNy0xMi44IDEyLjgtMTIuOHogbTAgMCIgZmlsbD0iIzhDQkE1RiIgcC1pZD0iMzQxMCI+PC9wYXRoPjwvc3ZnPg==");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* 遮罩层 */
+.sidebar-mask {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 99;
+}
+
+/* 侧边栏 */
+.sidebar {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 60vw;
+  background: #fff;
+  z-index: 100;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  padding: 40rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+.sidebar-item {
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  border-bottom: 1px solid #eee;
+}

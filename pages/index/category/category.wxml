@@ -1,0 +1,17 @@
+<view class="category-safe-area">
+  <view class="header-row">
+    <van-icon class="back-icon" name="arrow-left" bind:click="onBackHome" />
+    <view class="header-title">商品分类</view>
+    <view class="icon-shezhi"></view>
+    <view class="header-placeholder"></view>
+  </view>
+</view>
+<view class="category-container">
+  <view class="category-list">
+    <block wx:for="{{categories}}" wx:key="value">
+      <view class="category-item">
+        <text class="category-name">{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+</view> 

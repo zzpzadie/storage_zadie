@@ -1,0 +1,48 @@
+<view class="in-stock-safe-area">
+  <view class="header-row">
+    <van-icon class="back-icon" name="arrow-left" bind:click="onBackHome" />
+    <view class="header-title">入库登记</view>
+    <view class="header-placeholder"></view>
+  </view>
+</view>
+<view class="in-stock-container">
+  <scroll-view scroll-y class="form-scroll">
+    <form bindsubmit="onSubmit">
+      <view class="form-group">
+        <text class="label required">时间</text>
+        <picker mode="date" value="{{date}}" start="2020-01-01" end="2099-12-31" bindchange="onDateChange">
+          <view class="picker picker-small">{{date || '请选择日期'}}</view>
+        </picker>
+      </view>
+      <view class="form-group">
+        <text class="label required">金额</text>
+        <input class="input" type="digit" placeholder="请输入金额" value="{{amount}}" bindinput="onAmountInput" />
+      </view>
+      <view class="form-group">
+        <text class="label">类别</text>
+        <picker mode="selector" range="{{categoryList}}" value="{{categoryIndex}}" bindchange="onCategoryChange">
+          <view class="picker picker-small">
+            {{ categoryList.length > 0 ? categoryList[categoryIndex] : '请选择类别' }}
+          </view>
+        </picker>
+      </view>
+      <view class="form-group">
+        <text class="label">位置</text>
+        <input class="input" placeholder="请输入位置" value="{{location}}" bindinput="onLocationInput" />
+      </view>
+      <view class="form-group form-group-row">
+        <text class="label">数量</text>
+        <view class="row-flex">
+          <input class="input input-flex" type="number" placeholder="请输入数量" value="{{quantity}}" bindinput="onQuantityInput" />
+          <input class="input input-flex-unit" placeholder="单位" value="{{unit}}" bindinput="onUnitInput" />
+        </view>
+      </view>
+      <view class="form-group">
+        <text class="label">规格</text>
+        <input class="input" placeholder="请输入规格" value="{{spec}}" bindinput="onSpecInput" />
+      </view>
+      <button class="submit-btn" formType="submit">提交入库</button>
+    </form>
+  </scroll-view>
+  <button class="fab" bindtap="onImportExcel">＋</button>
+</view> 

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "入库",
+  "usingComponents": {
+    "van-icon": "vant-weapp/icon/index"
+  }
+} 

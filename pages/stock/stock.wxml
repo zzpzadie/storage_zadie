@@ -1,0 +1,61 @@
+<view class="container">
+
+  <!-- 顶部操作栏 -->
+  <view class="stock-top-bar">
+    <view class="icon-shezhi"></view>
+    <view class="icon-export"></view>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="stock-search-bar">
+  <view class="stock-top-bar">
+    <button class="top-btn" bindtap="showSidebar">分类</button>
+  </view>
+
+<!-- 侧边栏和遮罩 -->
+<view wx:if="{{sidebarVisible}}">
+  <view class="sidebar-mask" bindtap="hideSidebar"></view>
+  <view class="sidebar">
+    <view class="sidebar-title">分类</view>
+    <block wx:for="{{categories}}" wx:key="value">
+      <view class="sidebar-item" data-value="{{item.value}}" bindtap="selectCategory">
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+</view>
+    <input class="search-input" placeholder="搜索商品名称" bindinput="onSearchInput" />
+    <button class="search-btn" bindtap="onSearch">搜索</button>
+  </view>
+
+  <!-- 分类筛选 -->
+  <view class="stock-filter-bar">
+    <picker mode="selector" range="{{categoryList}}" value="{{categoryIndex}}" bindchange="onCategoryChange">
+      <view class="filter-picker">{{ categoryList[categoryIndex] || '全部类别' }}</view>
+    </picker>
+  </view>
+
+  <!-- 商品列表 -->
+  <scroll-view scroll-y class="stock-list">
+    <block wx:for="{{stockList}}" wx:key="id">
+      <view class="stock-item" bindtap="onViewDetail" data-id="{{item.id}}">
+        <image class="item-img" src="{{item.imgUrl}}" mode="aspectFill" />
+        <view class="item-info">
+          <text class="item-name">{{item.name}}</text>
+          <text class="item-qty {{item.qty < item.warning ? 'warning' : ''}}">库存：{{item.qty}}{{item.unit}}</text>
+          <text class="item-location">库位：{{item.location}}</text>
+          <text class="item-spec">规格：{{item.spec}}</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- 底部操作栏 -->
+  <view class="stock-ops-bar">
+    <button bindtap="onInStock">入库登记</button>
+    <button bindtap="onOutStock">出库登记</button>
+    <button bindtap="onSetWarning">预警设置</button>
+    <button bindtap="onTransfer">调拨</button>
+    <button bindtap="onInventory">盘点</button>
+  </view>
+</view> 
